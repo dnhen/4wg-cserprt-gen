@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+	<!-- Bootstrap Requirements -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootswatch CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/cosmo/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+	
+	<title>4WG Course Report Genrator</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<div class="container-fluid navbar-container">
+			<a class="navbar-brand" href="index.html">4WG CSERPRT GEN</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarColor01">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="help.html">Help</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container py-4">
+		<h1>Help</h1>
+		<p>
+			1. On the home page, click the green "+" button to insert the total number of rows (cadets) you want reports generated for.<br><br>
+			2. Add a cadet last name, then assign a rank to each category (1- low standard; 2- average standard; 3- high standard).<br><br>
+			3. Once each cadet has a name and ranks assigned, click the purple "Generate" button to generate reports.<br><br>
+			4. Read the report, and make any edits that you want to on this page. Once you have read a report, click the "Confirm" button to confirm the report and make no further changes.<br><br>
+			5. Once all reports have been read, edited, and confirmed, click the "Export" button.<br><br>
+			6. This will export the reports to a PDF which should automatically download.<br><br>
+		</p>
+		<p class="text-muted">
+			Notes:<br><br>
+			- On the home page, on the top right of the table is a total count of cadets you are generating reports for.<br><br>
+			- On the bottom right of the page, you will see notifications appear if you try and do something that you can not do, or you make changes (such as adding or deleting rows).<br><br>
+			- You have to have a name for each cadet before generating the reports.<br><br>
+			- You have to confirm each report before you can export all the reports.<br><br>
+			- Once you confirm a report, you can not make changes. If you want to make changes, you have to untick to unconfirm then try again.<br><br>
+		</p>
+	</div>
+	
+	<!-- JavaScript Include -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>

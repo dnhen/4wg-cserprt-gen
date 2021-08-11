@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+	<!-- Bootstrap Requirements -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootswatch CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/cosmo/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+	
+	<title>4WG Course Report Genrator</title>
+</head>
+<body onLoad="displayReports();">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<div class="container-fluid navbar-container">
+			<a class="navbar-brand" href="index.html">4WG CSERPRT GEN</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarColor01">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="help.html">Help</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container py-4">
+		<div class="row">
+			<div class="col">
+				<div class="card border-success mb-3" style="max-width: 20rem;">
+					<div class="card-header">4WG Course Report Generator</div>
+					<div class="card-body">
+						<h4 class="card-title">Welcome</h4>
+						<p class="card-text">Welcome to the 4WG course report generator. This generator will efficiently generate course reports.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-warning mb-3" style="max-width: 20rem;">
+					<div class="card-header">4WG Course Report Generator</div>
+					<div class="card-body">
+						<h4 class="card-title">Remember</h4>
+						<p class="card-text">Ensure every cadet has a name, and a score assigned to each of their categories before generating.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-info mb-3" style="max-width: 20rem;">
+					<div class="card-header">4WG Course Report Generator</div>
+					<div class="card-body">
+						<h4 class="card-title">Help</h4>
+						<p class="card-text">To view how the generator works, and what information means, click the help tab above.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-4">
+		<span class="badge bg-info float-end" id="totalNumber">1</span>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col" style="width: 20%;">Cadet Last Name</th>
+					<th scope="col">Report</th>
+					<th scope="col" style="width: 10%;">Confirm</th>
+					<th scope="col" style="width: 10%;">Status</th>
+				</tr>
+			</thead>
+			<form>
+				<tbody id="cadet-table">
+					<tr id="finalExportRow">
+						<td>
+							<button type="button" class="btn btn-outline-info" onclick="exportReports();">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+									<path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+								</svg>
+								Export
+							</button>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</form>
+		</table>
+	</div>
+
+	<div class="toast-container position-absolute bottom-0 end-0 p-3">
+		<div class="toast hide export-confirm-error-toast text-white bg-warning" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<strong class="me-auto">4WG Course Report Generator</strong>
+				<small class="text-muted">just now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				Unable to export: ensure you confirm each report
+			</div>
+		</div>
+	</div>
+	
+	<!-- JavaScript Include -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>

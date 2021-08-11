@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<head>
+	<!-- Bootstrap Requirements -->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootswatch CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/cosmo/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+	
+	<title>4WG Course Report Genrator</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<div class="container-fluid navbar-container">
+			<a class="navbar-brand" href="index.html">4WG CSERPRT GEN</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarColor01">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link active" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="help.html">Help</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container py-4">
+		<div class="row">
+			<div class="col">
+				<div class="card border-success mb-3" style="max-width: 20rem;">
+					<div class="card-header">4WG Course Report Generator</div>
+					<div class="card-body">
+						<h4 class="card-title">Welcome</h4>
+						<p class="card-text">Welcome to the 4WG course report generator. This generator will efficiently generate course reports.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-warning mb-3" style="max-width: 20rem;">
+					<div class="card-header">4WG Course Report Generator</div>
+					<div class="card-body">
+						<h4 class="card-title">Remember</h4>
+						<p class="card-text">Ensure every cadet has a name, and a score assigned to each of their categories before generating.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card border-info mb-3" style="max-width: 20rem;">
+					<div class="card-header">4WG Course Report Generator</div>
+					<div class="card-body">
+						<h4 class="card-title">Help</h4>
+						<p class="card-text">To view how the generator works, and what information means, click the help tab above.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container py-4">
+		<span class="badge bg-info float-end" id="totalNumber">1</span>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Cadet Last Name</th>
+					<th scope="col">Leadership</th>
+					<th scope="col">PDA</th>
+					<th scope="col">C&C</th>
+					<th scope="col">Room</th>
+					<th scope="col">Uniform</th>
+					<th scope="col">Behaviour</th>
+					<th scope="col">Overall</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<form>
+				<tbody id="cadet-table">
+					<tr class="cadet-row" id="cadet-row-1">
+						<th scope="row">
+							<div class="form-group">
+								<input type="text" class="form-control is-invalid" placeholder="Last Name" id="name1" onchange="inputFormChange(1);">
+							</div>
+						</th>
+						<td>
+							<div class="btn-group" role="group">
+								<input type="radio" class="btn-check" name="ld1" id="ld1-1" autocomplete="off" value="1">
+								<label class="btn btn-outline-danger" for="ld1-1">1</label>
+								<input type="radio" class="btn-check" name="ld1" id="ld1-2" autocomplete="off" value="2" checked="">
+								<label class="btn btn-outline-warning" for="ld1-2">2</label>
+								<input type="radio" class="btn-check" name="ld1" id="ld1-3" autocomplete="off" value="3">
+								<label class="btn btn-outline-success" for="ld1-3">3</label>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group" role="group" >
+								<input type="radio" class="btn-check" name="pda1" id="pda1-1" autocomplete="off" value="1">
+								<label class="btn btn-outline-danger" for="pda1-1">1</label>
+								<input type="radio" class="btn-check" name="pda1" id="pda1-2" autocomplete="off" value="2" checked="">
+								<label class="btn btn-outline-warning" for="pda1-2">2</label>
+								<input type="radio" class="btn-check" name="pda1" id="pda1-3" autocomplete="off" value="3">
+								<label class="btn btn-outline-success" for="pda1-3">3</label>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group" role="group">
+								<input type="radio" class="btn-check" name="cnc1" id="cnc1-1" autocomplete="off" value="1">
+								<label class="btn btn-outline-danger" for="cnc1-1">1</label>
+								<input type="radio" class="btn-check" name="cnc1" id="cnc1-2" autocomplete="off" value="2" checked="">
+								<label class="btn btn-outline-warning" for="cnc1-2">2</label>
+								<input type="radio" class="btn-check" name="cnc1" id="cnc1-3" autocomplete="off" value="3">
+								<label class="btn btn-outline-success" for="cnc1-3">3</label>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group" role="group">
+								<input type="radio" class="btn-check" name="rom1" id="rom1-1" autocomplete="off" value="1">
+								<label class="btn btn-outline-danger" for="rom1-1">1</label>
+								<input type="radio" class="btn-check" name="rom1" id="rom1-2" autocomplete="off" value="2" checked="">
+								<label class="btn btn-outline-warning" for="rom1-2">2</label>
+								<input type="radio" class="btn-check" name="rom1" id="rom1-3" autocomplete="off" value="3">
+								<label class="btn btn-outline-success" for="rom1-3">3</label>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group" role="group">
+								<input type="radio" class="btn-check" name="uni1" id="uni1-1" autocomplete="off" value="1">
+								<label class="btn btn-outline-danger" for="uni1-1">1</label>
+								<input type="radio" class="btn-check" name="uni1" id="uni1-2" autocomplete="off" value="2" checked="">
+								<label class="btn btn-outline-warning" for="uni1-2">2</label>
+								<input type="radio" class="btn-check" name="uni1" id="uni1-3" autocomplete="off" value="3">
+								<label class="btn btn-outline-success" for="uni1-3">3</label>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group" role="group">
+								<input type="radio" class="btn-check" name="beh1" id="beh1-1" autocomplete="off" value="1">
+								<label class="btn btn-outline-danger" for="beh1-1">1</label>
+								<input type="radio" class="btn-check" name="beh1" id="beh1-2" autocomplete="off" value="2" checked="">
+								<label class="btn btn-outline-warning" for="beh1-2">2</label>
+								<input type="radio" class="btn-check" name="beh1" id="beh1-3" autocomplete="off" value="3">
+								<label class="btn btn-outline-success" for="beh1-3">3</label>
+							</div>
+						</td>
+						<td>
+							<div class="btn-group" role="group">
+								<input type="radio" class="btn-check" name="ovr1" id="ovr1-1" autocomplete="off" value="1">
+								<label class="btn btn-outline-danger" for="ovr1-1">1</label>
+								<input type="radio" class="btn-check" name="ovr1" id="ovr1-2" autocomplete="off" value="2" checked="">
+								<label class="btn btn-outline-warning" for="ovr1-2">2</label>
+								<input type="radio" class="btn-check" name="ovr1" id="ovr1-3" autocomplete="off" value="3">
+								<label class="btn btn-outline-success" for="ovr1-3">3</label>
+							</div>
+						</td>
+						<td>
+							<button type="button" class="btn btn-outline-danger" onclick="deleteRow(1);">
+								<svg width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+									<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"></path>
+								</svg>
+							</button>
+						</td>
+					</tr>
+					<tr id="finalDeleteRow">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<button type="button" class="btn btn-outline-success" onclick="addRow();">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+									<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"></path>
+								</svg>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button type="button" class="btn btn-outline-info" onclick="generateReports();">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+									<path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+								</svg>
+								Generate
+							</button>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</form>
+		</table>
+	</div>
+
+	<div class="toast-container position-absolute bottom-0 end-0 p-3">
+		<div class="toast hide delete-row-toast text-white bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<strong class="me-auto">4WG Course Report Generator</strong>
+				<small class="text-muted">just now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				The row has successfully been deleted.
+			</div>
+		</div>
+
+		<div class="toast hide add-row-toast text-white bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<strong class="me-auto">4WG Course Report Generator</strong>
+				<small class="text-muted">just now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				Successfully created a new row.
+			</div>
+		</div>
+
+		<div class="toast hide failure-no-last-name-toast text-white bg-warning" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<strong class="me-auto">4WG Course Report Generator</strong>
+				<small class="text-muted">just now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				Unable to generate reports: please ensure all rows have a cadet last name.
+			</div>
+		</div>
+
+		<div class="toast hide delete-row-toast-error text-white bg-warning" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<strong class="me-auto">4WG Course Report Generator</strong>
+				<small class="text-muted">just now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				Unable to delete row: you must have at least one row.
+			</div>
+		</div>
+	</div>
+	
+	<!-- JavaScript Include -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>
